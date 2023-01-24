@@ -1,0 +1,34 @@
+* run_oscillators
+
+.include ring_oscillator_0.cir
+.include ring_oscillator_1.cir
+.include ring_oscillator_2.cir
+.include ring_oscillator_3.cir
+.include ring_oscillator_4.cir
+.include ring_oscillator_5.cir
+.include ring_oscillator_6.cir
+.include ring_oscillator_7.cir
+
+x0 en out0 vdd vss ring_oscillator_0
+x1 en out1 vdd vss ring_oscillator_1
+x2 en out2 vdd vss ring_oscillator_2
+x3 en out3 vdd vss ring_oscillator_3
+x4 en out4 vdd vss ring_oscillator_4
+x5 en out5 vdd vss ring_oscillator_5
+x6 en out6 vdd vss ring_oscillator_6
+x7 en out7 vdd vss ring_oscillator_7
+
+*set the temperature
+.options temp=27
+
+* supply
+V0 vdd vss dc 1.0
+V1 vss 0 0
+* voltage on the input
+Vin0 en 0 pulse(1.2 0 1ns 1ns 20ns 480ns)
+.control
+tran 0.1n 1000n 0
+
+plot en out0 out1 out2 out3 out4 out5 out6 out7 
+.endc
+.end

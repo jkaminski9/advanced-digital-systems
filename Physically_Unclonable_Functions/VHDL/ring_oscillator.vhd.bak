@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ro_puf is
+	generic (
+		ro_length : positive := 13;
+		ro_count  : positive := 1
+	);
+	port (
+			reset: in std_logic;
+			enable: in std_logic;
+			challenge: in std_logic_vector(

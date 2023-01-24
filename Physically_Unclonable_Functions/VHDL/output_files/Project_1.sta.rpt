@@ -1,0 +1,1069 @@
+Timing Analyzer report for Project_1
+Sun Oct 16 18:33:21 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Slow 1200mV 85C Model Setup Summary
+  7. Slow 1200mV 85C Model Hold Summary
+  8. Slow 1200mV 85C Model Recovery Summary
+  9. Slow 1200mV 85C Model Removal Summary
+ 10. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 11. Slow 1200mV 85C Model Metastability Summary
+ 12. Slow 1200mV 0C Model Fmax Summary
+ 13. Slow 1200mV 0C Model Setup Summary
+ 14. Slow 1200mV 0C Model Hold Summary
+ 15. Slow 1200mV 0C Model Recovery Summary
+ 16. Slow 1200mV 0C Model Removal Summary
+ 17. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 18. Slow 1200mV 0C Model Metastability Summary
+ 19. Fast 1200mV 0C Model Setup Summary
+ 20. Fast 1200mV 0C Model Hold Summary
+ 21. Fast 1200mV 0C Model Recovery Summary
+ 22. Fast 1200mV 0C Model Removal Summary
+ 23. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Fast 1200mV 0C Model Metastability Summary
+ 25. Multicorner Timing Analysis Summary
+ 26. Board Trace Model Assignments
+ 27. Input Transition Times
+ 28. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 29. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 30. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 31. Setup Transfers
+ 32. Hold Transfers
+ 33. Recovery Transfers
+ 34. Removal Transfers
+ 35. Report TCCS
+ 36. Report RSKM
+ 37. Unconstrained Paths Summary
+ 38. Clock Status Summary
+ 39. Unconstrained Input Ports
+ 40. Unconstrained Output Ports
+ 41. Unconstrained Input Ports
+ 42. Unconstrained Output Ports
+ 43. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; Project_1                                           ;
+; Device Family         ; MAX 10                                              ;
+; Device Name           ; 10M50DAF484C6GES                                    ;
+; Timing Models         ; Preliminary                                         ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.35        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   7.0%      ;
+;     Processors 3-6         ;   6.9%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                    ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; Clock Name          ; Type ; Period  ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                 ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; altera_reserved_tck ; Base ; 100.000 ; 10.0 MHz  ; 0.000 ; 50.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { altera_reserved_tck } ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+
+
++----------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                       ;
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 79.21 MHz ; 79.21 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary          ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 43.688 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary          ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.240 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow 1200mV 85C Model Recovery Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 97.106 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 85C Model Removal Summary       ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.854 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++---------------------+--------+--------------------+
+; Clock               ; Slack  ; End Point TNS      ;
++---------------------+--------+--------------------+
+; altera_reserved_tck ; 49.491 ; 0.000              ;
++---------------------+--------+--------------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 5 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 344.432 ns
+
+
+
+
++----------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                        ;
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 86.64 MHz ; 86.64 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 44.229 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.224 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow 1200mV 0C Model Recovery Summary        ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 97.396 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Slow 1200mV 0C Model Removal Summary        ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.783 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; altera_reserved_tck ; 49.511 ; 0.000             ;
++---------------------+--------+-------------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 5 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 344.913 ns
+
+
+
+
++----------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary           ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 47.211 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary           ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.103 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Fast 1200mV 0C Model Recovery Summary        ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 98.583 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Fast 1200mV 0C Model Removal Summary        ;
++---------------------+-------+---------------+
+; Clock               ; Slack ; End Point TNS ;
++---------------------+-------+---------------+
+; altera_reserved_tck ; 0.404 ; 0.000         ;
++---------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++---------------------+--------+-------------------+
+; Clock               ; Slack  ; End Point TNS     ;
++---------------------+--------+-------------------+
+; altera_reserved_tck ; 49.386 ; 0.000             ;
++---------------------+--------+-------------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 5 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 347.675 ns
+
+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack     ; 43.688 ; 0.103 ; 97.106   ; 0.404   ; 49.386              ;
+;  altera_reserved_tck ; 43.688 ; 0.103 ; 97.106   ; 0.404   ; 49.386              ;
+; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++----------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                          ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin                 ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; done                ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; altera_reserved_tdo ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++---------------------------------------------------------------------------------+
+; Input Transition Times                                                          ;
++---------------------+-----------------------+-----------------+-----------------+
+; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+-----------------------+-----------------+-----------------+
+; reset               ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; clock               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; altera_reserved_tms ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; altera_reserved_tck ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; altera_reserved_tdi ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_CONFIG_SEL~ ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_nCONFIG~    ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_nSTATUS~    ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_CONF_DONE~  ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
++---------------------+-----------------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; done                ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.27e-08 V                   ; 3.23 V              ; -0.106 V            ; 0.46 V                               ; 0.281 V                              ; 3.06e-10 s                  ; 4.34e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 5.27e-08 V                  ; 3.23 V             ; -0.106 V           ; 0.46 V                              ; 0.281 V                             ; 3.06e-10 s                 ; 4.34e-10 s                 ; No                        ; Yes                       ;
+; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.97e-08 V                   ; 2.4 V               ; -0.023 V            ; 0.201 V                              ; 0.081 V                              ; 4.59e-10 s                  ; 5.51e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.97e-08 V                  ; 2.4 V              ; -0.023 V           ; 0.201 V                             ; 0.081 V                             ; 4.59e-10 s                 ; 5.51e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; done                ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.35e-06 V                   ; 3.17 V              ; -0.0587 V           ; 0.248 V                              ; 0.173 V                              ; 4.61e-10 s                  ; 6e-10 s                     ; No                         ; No                         ; 3.08 V                      ; 5.35e-06 V                  ; 3.17 V             ; -0.0587 V          ; 0.248 V                             ; 0.173 V                             ; 4.61e-10 s                 ; 6e-10 s                    ; No                        ; No                        ;
+; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.04e-06 V                   ; 2.37 V              ; -0.0115 V           ; 0.13 V                               ; 0.065 V                              ; 6.31e-10 s                  ; 6.45e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.04e-06 V                  ; 2.37 V             ; -0.0115 V          ; 0.13 V                              ; 0.065 V                             ; 6.31e-10 s                 ; 6.45e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                 ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; done                ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; altera_reserved_tdo ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.68e-07 V                   ; 2.73 V              ; -0.0396 V           ; 0.362 V                              ; 0.108 V                              ; 3.11e-10 s                  ; 4.42e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.68e-07 V                  ; 2.73 V             ; -0.0396 V          ; 0.362 V                             ; 0.108 V                             ; 3.11e-10 s                 ; 4.42e-10 s                 ; No                        ; Yes                       ;
++---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Setup Transfers                                                                       ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 882      ; 0        ; 34       ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Hold Transfers                                                                        ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 882      ; 0        ; 34       ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                    ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 53       ; 0        ; 0        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Removal Transfers                                                                     ;
++---------------------+---------------------+----------+----------+----------+----------+
+; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------+---------------------+----------+----------+----------+----------+
+; altera_reserved_tck ; altera_reserved_tck ; 53       ; 0        ; 0        ; 0        ;
++---------------------+---------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 2     ; 2    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 72    ; 72   ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 2     ; 2    ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------------------+
+; Clock Status Summary                                                     ;
++-----------------------------+---------------------+------+---------------+
+; Target                      ; Clock               ; Type ; Status        ;
++-----------------------------+---------------------+------+---------------+
+; altera_reserved_tck         ; altera_reserved_tck ; Base ; Constrained   ;
+; clock                       ;                     ; Base ; Unconstrained ;
+; control_unit:fsm|enable_puf ;                     ; Base ; Unconstrained ;
++-----------------------------+---------------------+------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                  ;
++---------------------+--------------------------------------------------------------------------------------+
+; Input Port          ; Comment                                                                              ;
++---------------------+--------------------------------------------------------------------------------------+
+; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                  ;
++---------------------+---------------------------------------------------------------------------------------+
+; Output Port         ; Comment                                                                               ;
++---------------------+---------------------------------------------------------------------------------------+
+; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; done                ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                  ;
++---------------------+--------------------------------------------------------------------------------------+
+; Input Port          ; Comment                                                                              ;
++---------------------+--------------------------------------------------------------------------------------+
+; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                                  ;
++---------------------+---------------------------------------------------------------------------------------+
+; Output Port         ; Comment                                                                               ;
++---------------------+---------------------------------------------------------------------------------------+
+; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; done                ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Sun Oct 16 18:33:19 2022
+Info: Command: quartus_sta Project_1 -c Project_1
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity sld_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Project_1.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[12]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[6]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[3]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[12]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[5]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[2]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[1]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[6]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[11]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[9]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[1]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[12]|datac"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g2|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[2]|datac"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:0:ro_g1|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:1:ro_g1|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[6]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:3:ro_g1|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[9]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[5]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[2]|datac"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:2:ro_g1|chain[0]|datac"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[11]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[10]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[5]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[1]|datac"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:4:ro_g1|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[3]|datac"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:6:ro_g1|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[7]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[3]|datac"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:7:ro_g1|chain[0]|datad"
+Warning (332125): Found combinational loop of 26 nodes File: /home/jkaminski/UML/Fall 2022/Digital_Systems/Projects/Project 1/VHDL/ring_oscillator.vhd Line: 17
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[0]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[12]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[12]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[11]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[11]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[10]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[10]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[9]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[9]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[8]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[8]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[7]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[7]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[6]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[6]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[5]|datac"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[5]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[4]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[4]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[3]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[3]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[2]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[2]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[1]|datad"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[1]|combout"
+    Warning (332126): Node "puf|\cir_gen:5:ro_g1|chain[0]|datad"
+Warning (332060): Node: clock was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register bram:ram|bram_ip:ram0|altsyncram:altsyncram_component|altsyncram_40r3:auto_generated|altsyncram_nho2:altsyncram1|ram_block3a0~porta_we_reg is being clocked by clock
+Warning (332060): Node: control_unit:fsm|enable_puf was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register ro_puf:puf|counter:\cir_gen:5:c_g1|counter_up[0] is being clocked by control_unit:fsm|enable_puf
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Info (332146): Worst-case setup slack is 43.688
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    43.688               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.240
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.240               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 97.106
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    97.106               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.854
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.854               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.491
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    49.491               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 5 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 344.432 ns
+    Info (332114): 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Warning (334000): Timing characteristics of device 10M50DAF484C6GES are preliminary
+Info (334004): Delay annotation completed successfully
+Warning (332060): Node: clock was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register bram:ram|bram_ip:ram0|altsyncram:altsyncram_component|altsyncram_40r3:auto_generated|altsyncram_nho2:altsyncram1|ram_block3a0~porta_we_reg is being clocked by clock
+Warning (332060): Node: control_unit:fsm|enable_puf was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register ro_puf:puf|counter:\cir_gen:5:c_g1|counter_up[0] is being clocked by control_unit:fsm|enable_puf
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
+Info (332146): Worst-case setup slack is 44.229
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    44.229               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.224
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.224               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 97.396
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    97.396               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.783
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.783               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.511
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    49.511               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 5 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 344.913 ns
+    Info (332114): 
+Info: Analyzing Fast 1200mV 0C Model
+Warning (332060): Node: clock was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register bram:ram|bram_ip:ram0|altsyncram:altsyncram_component|altsyncram_40r3:auto_generated|altsyncram_nho2:altsyncram1|ram_block3a0~porta_we_reg is being clocked by clock
+Warning (332060): Node: control_unit:fsm|enable_puf was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register ro_puf:puf|counter:\cir_gen:5:c_g1|counter_up[0] is being clocked by control_unit:fsm|enable_puf
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
+Info (332146): Worst-case setup slack is 47.211
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    47.211               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.103
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.103               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 98.583
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    98.583               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.404
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.404               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.386
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    49.386               0.000 altera_reserved_tck 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 5 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 347.675 ns
+    Info (332114): 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 450 warnings
+    Info: Peak virtual memory: 583 megabytes
+    Info: Processing ended: Sun Oct 16 18:33:21 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

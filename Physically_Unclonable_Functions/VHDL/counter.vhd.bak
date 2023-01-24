@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity counter is
+	generic (
+		n : natural := 13
+	);
+	port (
+			-- Inputs --
+			clk     : in  std_logic;
+			reset   : in  std_logic;
+			enable  : in  std_logic;
+			-- Outputs --
+			counter : out std_logic_vector(3 downto 0);
+	);
+end entity counter;
+
+architecture rtl of counter is
+signal counter_up : std_logic_vector(3 downto 0);
+begin	
+	process(clk, reset)
+	begin
+		if reset='0' then
+			counter_up <= x"0";
+		elsif (rising_edge(clk) and enable='1') then
+			counter_up <= counter_up + x"1";
+		end if;
+	end process
+	counter <= counter_up;
+end rtl;

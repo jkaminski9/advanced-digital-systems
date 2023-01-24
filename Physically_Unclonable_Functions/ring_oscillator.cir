@@ -1,0 +1,21 @@
+* ring_oscillator
+
+.include nand.cir 
+.include inverter.cir
+
+.subckt ring_oscillator in out vdd vss
+x0 in out s1 vdd vss nand
+x1 s1 s2 vdd vss inverter
+x2 s2 s3 vdd vss inverter
+x3 s3 s4 vdd vss inverter
+x4 s4 s5 vdd vss inverter
+x5 s5 s6 vdd vss inverter
+x6 s6 s7 vdd vss inverter
+x7 s7 s8 vdd vss inverter
+x8 s8 s9 vdd vss inverter
+x9 s9 s10 vdd vss inverter
+x10 s10 s11 vdd vss inverter
+x11 s11 s12 vdd vss inverter
+x12 s12 out vdd vss inverter
+
+.ends ring_oscillator

@@ -1,0 +1,169 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity control_unit is
+	generic (
+		bram_address_width:	positive := 5
+	);
+	port (
+		clock:		in	std_logic;
+		reset:		in	std_logic;
+		enable:		in	std_logic;
+
+		address:	out	std_logic_vector(bram_address_width - 1 downto 0);
+		calculate:	out	std_logic;
+		done:		out	std_logic
+	);
+end entity control_unit;
+
+architecture logic of control_unit is
+	type state_type is ( idle, gen_address, assert_calculate,
+						increment_address, sum_done );
+	constant top_address:	natural := 2**bram_address_width - 1;
+
+	signal state, next_state: state_type := idle;
+	signal current_address: natural range 0 to top_address := 0;
+begin
+
+	transition_function: process(state, current_address) is
+	begin
+		case state is
+			when idle			=> next_state <= gen_address;
+			when gen_address	=> next_state <= assert_calculate;
+			when assert_calculate =>
+					if current_address = top_address then
+						next_state <= sum_done;
+					else
+						next_state <= increment_address;
+					end if;
+					---- if using VHDL-2008, then the above reduces to
+					-- next_state <= sum_done when
+					--					current_address = top_address
+					--				else increment_address;
+			when increment_address =>
+					next_state <= gen_address;
+			when sum_done => next_state <= sum_done;
+			when others => next_state <= idle;
+		end case;
+	end process transition_function;
+
+	output_function: process(clock) is
+	begin
+		if rising_edge(clock) then
+			if reset = '0' then
+				calculate <= '0';
+				address <= (others => '0');
+			else
+				if state = assert_calculate then
+					calculate <= '1';
+				else
+					calculate <= '0';
+				end if;
+				---- if using VHDL-2008, then the above reduces to
+				-- calculate <= '1' when state = assert_calculate else '0';
+				address <= std_logic_vector(
+								to_unsigned(current_address,
+										bram_address_width));
+			end if;
+		end if;
+	end process output_function;
+
+	save_state: process(clock) is
+	begin
+		if rising_edge(clock) then
+			if reset = '0' then
+				state <= idle;
+			elsif enable = '1' then
+				state <= next_state;
+			end if;
+		end if;
+	end process save_state;
+
+	inc_address: process(clock) is
+	begin
+		if rising_edge(clock) then
+			if reset = '0' then
+				current_address <= 0;
+			elsif state = increment_address then
+				current_address <= current_address + 1;
+			end if;
+		end if;		
+	end process inc_address;
+
+end architecture logic;
+
+architecture oisc of control_unit is
+	type ucode_line is
+	record
+		false_path:			natural;
+		true_path:			natural;
+		calculate:			std_logic;
+		increment_enable:	boolean;
+		done:				std_logic;
+	end record;
+
+	type ucode_rom_type is array(natural range<>) of ucode_line;
+
+	-- a microcode ROM table; this is technically a program
+	constant ucode_rom: ucode_rom_type := (
+			-- idle
+			( false_path => 1, true_path => 1, calculate => '0',
+					increment_enable => false, done => '0'),
+			-- gen address
+			( false_path => 2, true_path => 2, calculate => '0',
+					increment_enable => false, done => '0'),
+			-- calculate
+			( false_path => 3, true_path => 5, calculate => '1',
+					increment_enable => false, done => '0'),
+			-- increment address
+			( false_path => 1, true_path => 1, calculate => '0',
+					increment_enable => true, done => '0'),
+			-- done
+			( false_path => 5, true_path => 5, calculate => '0',
+					increment_enable => false, done => '1')
+		);
+	constant top_address:	natural := 2**bram_address_width - 1;
+
+	signal current_address:	natural range 0 to top_address;
+	signal ucode_address:	natural range ucode_rom'range;
+
+begin
+
+	-- microcode sequencer, this is technically a one instruction set CPU
+	ucode_sequencer: process(clock) is
+		variable path: natural range ucode_rom'range;
+	begin
+		if rising_edge(clock) then
+			if reset = '0' then
+				ucode_address <= 0;
+			elsif enable = '1' then
+				if current_address = top_address then
+					path := ucode_rom(ucode_address).true_path;
+				else
+					path := ucode_rom(ucode_address).false_path;
+				end if;
+				ucode_address <= path;
+			end if;
+		end if;
+	end process ucode_sequencer;
+
+	-- increment addresses
+	inc_address: process(clock) is
+	begin
+		if rising_edge(clock) then
+			if reset = '0' then
+				current_address <= 0;
+			elsif ucode_rom(ucode_address).increment_enable then
+				current_address <= current_address + 1;
+			end if;
+		end if;
+	end process inc_address;
+
+	-- outputs
+	done <= ucode_rom(ucode_address).done;
+	calculate <= ucode_rom(ucode_address).calculate;
+	address <= std_logic_vector(
+						to_unsigned(current_address, bram_address_width));
+
+end architecture;

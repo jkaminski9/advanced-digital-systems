@@ -1,0 +1,20 @@
+* run_oscillators
+
+.include ring_oscillator_0.cir
+
+x0 en out0 vdd vss ring_oscillator_0
+
+*set the temperature
+.options temp=40
+
+* supply
+V0 vdd vss dc 1.2
+V1 vss 0 0
+* voltage on the input
+Vin0 en 0 pulse(1.2 0 1ns 1ns 20ns 480ns)
+.control
+tran 0.1n 1000n 0
+
+plot en out0
+.endc
+.end

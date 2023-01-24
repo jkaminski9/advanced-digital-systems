@@ -1,0 +1,78 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+library ads;
+use ads.ads_fixed.all;
+use ads.ads_complex.all;
+
+library work;
+use work.mandlebrot_pkg.all;
+
+entity mandlebrot_zoom_fsm is
+	port (
+		-- Inputs --
+		clock  : in std_logic;
+		reset  : in std_logic;
+		zoom   : in std_logic;
+		-- Outputs --
+		xmax   : out ads_sfixed;
+		xmin   : out ads_sfixed;
+		ymax   : out ads_sfixed;
+		ymin   : out ads_sfixed;
+		deltax : out ads_sfixed;
+		deltay  : out ads_sfixed;
+	);
+end entity mandlebrot_zoom_fsm;
+
+architecture rtl of mandlebrot_zoom_fsm is
+
+	type state is (zoom_out_state, zoom_in_state);
+	signal pr_state : state := zoom_out_state; 
+	
+	signal xmax_tmp : real := 3;
+	signal xmin_tmp : real := -3;
+	signal ymax_tmp : real := 2;
+	signal ymin_tmp : real := -2;
+
+begin
+	
+	xmax <= to_ads_sfixed(xmax_tmp);
+	xmin <= to_ads_sfixed(xmin_tmp);
+	ymax <= to_ads_sfixed(ymax_tmp);
+	ymin <= to_ads_sfixed(ymin_tmp);
+	delta_x <= to_ads_sfixed((xmax_tmp - xmin_tmp) / vga_width);
+	delta_y <= to_ads_sfixed((ymax_tmp - ymin_tmp) / vga_height);	
+	
+	process(reset, clock, zoom) is
+	begin
+		if (reset = '0') then
+			pr_state <= zoom_out_state;
+			xmax_tmp <= 3;
+			xmin_tmp <= -3;
+			ymax_tmp <= 2;
+			ymin_tmp <= -2;
+		elsif (rising_edge(clock)) then
+			case pr_state is
+				when zoom_out_state =>
+					if (zoom = '0') then
+						pr_state <= zoom_in_state;
+					else 
+						pr_state <= zoom_out_state;
+					end if;
+					xmax_tmp <= 3;
+					xmin_tmp <= -3;
+					ymax_tmp <= 2;
+					ymin_tmp <= -2;
+				when zoom_in_state =>
+					if (zoom = '0') then
+						pr_state <= zoom_out_state;
+					else 
+						pr_state <= zoom_in_state;
+					end if;
+					xmax_tmp <= 3;
+					xmin_tmp <= -3;
+					ymax_tmp <= 2;
+					ymin_tmp <= -2;
+	
+	
+	

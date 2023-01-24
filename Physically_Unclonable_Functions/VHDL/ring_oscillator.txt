@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ring_oscillator is
+	generic (
+		n : positive := 13
+	);
+	port (
+			-- Inputs --
+			sig_in  : in  std_logic;
+			-- Outputs --
+			sig_out : out std_logic
+	);
+end entity ring_oscillator;
+
+architecture rtl of ring_oscillator is
+signal chain : std_logic_vector(n-1 downto 0);
+begin
+	assert n mod 2 = 1 report "Oscillator size must be odd" severity failure;
+	-- The input to the first inverter is the output of the last inverter NAND'd with the enable signal
+	chain(n-1) <= sig_in NAND chain(0);
+	-- Each signal in the chain is the previous signal inverted
+	gen: for i in 0 to n-2 generate
+		chain(i) <= not chain(i+1);
+	end generate;
+	-- The output signal is the output of the last inverter
+	sig_out <= chain(0);
+	
+end rtl;

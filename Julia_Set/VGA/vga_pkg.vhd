@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+library vga;
+use vga.vga_data.all;
+
+package vga_pkg is
+	---- component declarations
+	component vga_fsm is
+		generic (
+			vga_res:	vga_timing := vga_res_default
+		);
+		port (
+			vga_clock:		in	std_logic;
+			reset:			in	std_logic;
+			enable:        in std_logic;
+			point:			out	coordinate;
+			point_valid:	out	boolean;
+
+			h_sync:			out	std_logic;
+			v_sync:			out std_logic
+		);
+	end component vga_fsm;
+end package vga_pkg;
+
+package body vga_pkg is
+end package body vga_pkg;

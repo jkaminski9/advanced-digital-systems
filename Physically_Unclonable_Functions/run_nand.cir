@@ -1,0 +1,19 @@
+* run_nand
+.include nand.cir
+* nand instance
+x1 A B out vdd vss nand
+* supply
+V0 vdd vss dc 1.2v
+V1 vss 0 0
+* voltage on the input
+Vin1 A 0 0
+Vin2 B 0 0
+.control
+* simulation control block
+run
+* DC sweep on Vin
+dc Vin1 0v 1.2v 0.01v 
+* plot input and output
+plot A out
+.endc
+.end
